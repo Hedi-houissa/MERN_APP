@@ -20,15 +20,13 @@ app.use(express.json())
 //require routes 
 const userRouter = require('./routes/userRouter')
 const productRouter = require('./routes/productRouter')
-const panierRouter = require('./routes/panierRouter')
-const commandeRouter = require('./routes/commandeRouter')
+const orderRouter = require('./routes/orderRouter')
 const categoryRouter = require('./routes/categoryRouter')
 
 // use routers
 app.use('/user',userRouter)
 app.use('/product',productRouter)
-app.use('/panier',panierRouter)
-app.use('/commande',commandeRouter)
+app.use('/order',orderRouter)
 app.use('/category',categoryRouter)
 
 

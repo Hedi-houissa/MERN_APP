@@ -19,7 +19,7 @@ const productSchema = new Schema({
         required : true
     },
     color:{
-        type : String,
+        type : [],
         required : true
     },
     dispo:{

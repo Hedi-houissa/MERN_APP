@@ -14,22 +14,23 @@ const commandeSchema = new Schema({
         type : Number,
         required : true
     },
-    rest:{
-        type : Number,
-        required : true
-    },
     situation:{
-        type : Number,
+        type : String,
         required : true
     },
     userId:{
         type : String,
         required : true
     },
-    panierId:{
-        type : String,
+    listeProduct:{
+        type : [],
+        required : true
+    },
+    total:{
+        type : Number,
         required : true
     }
+
 
     })
 
