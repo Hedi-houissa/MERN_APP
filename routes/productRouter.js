@@ -55,7 +55,7 @@ router.get("/:_id", async (req, res) => {
 router.get("/category/:categoryId", async (req, res) => {
   try {
     const { categoryId } = req.params;
-    const products = await Product.findOne({ categoryId });
+    const products = await Product.find({ categoryId });
     if (!products) {
       return res
         .status(400)

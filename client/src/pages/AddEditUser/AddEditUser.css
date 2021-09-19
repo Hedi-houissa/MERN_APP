@@ -1,0 +1,19 @@
+.styleform{
+  width: 60% !important ;
+  background-color: lightcyan;
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px lightpink;
+  padding: 5% 0%;
+}
+.stylediv{
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  margin: 5%;
+}
+
+.ligne{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

@@ -1,0 +1,24 @@
+.ligne {
+    display: grid;
+    margin: 0% 15%;
+    width: 70%;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    margin: 15%;
+    width: 70%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+    
+  }
+
+  
+
+  .img_button{
+      width: 70px;
+      margin: 0% 2%;
+  }

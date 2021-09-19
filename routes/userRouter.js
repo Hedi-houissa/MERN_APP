@@ -21,6 +21,7 @@ router.get("/test", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newUser = req.body;
+    console.log('new user : ',newUser)
 
     if (
       !newUser.firstname ||
@@ -31,14 +32,19 @@ router.post("/", async (req, res) => {
       !newUser.city ||
       !newUser.postal_code
     ) {
-      return res.status(400).send({ msg: "all fields are required " });
+      console.log('all filed require')
+      return  res.status(400).send({ msg: "all fields are required " });
+       
     }
 
     const userTofind = await User.findOne({ email: newUser.email });
     if (userTofind) {
+      console.log('all redy exist')
+      window.alert('tous les champs obligatoire ')
       return res.status(400).send({ msg: "User alredy exist !!!" });
     }
     const userToAdd = new User(newUser);
+    console.log('user to add : ', userToAdd)
     await userToAdd.save();
     res.status(200).send({ msg: "user add succ", userToAdd });
   } catch (error) {
