@@ -81,9 +81,11 @@ router.post("/", async (req, res) => {
     if (
       !newProduct.name ||
       !newProduct.picture ||
-      !newProduct.color ||
+      !newProduct.type ||
       !newProduct.dispo ||
-      !newProduct.categoryId
+      !newProduct.categoryId ||
+      !newProduct.price||
+      !newProduct.description
     ) {
       return res.status(400).send({ msg: "all fileds are required" });
     }
@@ -107,6 +109,25 @@ router.delete('/:_id',async (req,res)=>{
   try {
     const{_id}=req.params
     const result = await Product.deleteOne({_id})
+    if (result.deletedCount === 0) {
+     return res.status(400).send({ msg: "product alredy deleted", error });
+   }
+   res.status(200).send({msg:"delete succ"})
+  } catch (error) {
+    res.status(400).send({msg:"can not delete ",error})
+  }
+})
+
+/**
+ * @desc : delete product by category
+ * @method : delete
+ * @path : http://localhost:7000/product/category
+ * @data : no
+ */
+router.delete('/category/:categoryId',async (req,res)=>{
+  try {
+    const{categoryId}=req.params
+    const result = await Product.deleteMany({categoryId})
     if (result.deletedCount === 0) {
      return res.status(400).send({ msg: "product alredy deleted", error });
    }

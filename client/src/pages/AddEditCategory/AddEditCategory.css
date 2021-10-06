@@ -1,0 +1,9 @@
+.form_category{
+    padding: 5%;
+    margin: 5% 35%;
+    text-align: left;
+    font-size: 30px;
+    border-radius: 30px;
+    background-color: rgb(135, 185, 250);
+    box-shadow: 10px 10px 10px rgb(187, 236, 245);
+}

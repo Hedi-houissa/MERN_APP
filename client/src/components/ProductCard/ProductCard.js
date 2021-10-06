@@ -7,31 +7,27 @@ import { getProductById } from "../../JS/action/productAction";
 
 function ProductCard({ product }) {
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
   
-
-
   return (
     <div className="link-to">
-        <Link to='/product' class="card"
+        <Link to='/product' className="card"
         onClick={()=>dispatch(getProductById(product._id))}
-        
         >
           <img
-            src="https://i.imgur.com/oYiTqum.jpg"
+            src={product.picture}
             class="card__image"
-            alt=""
+            alt="product"
           />
           <div class="card__overlay">
             <div class="card__header">
               <div class="card__header-text">
-                <h3 class="card__title">{product.name}</h3>
-                <span class="card__status">1 hour ago</span>
+                <h3 class="card__title">{product.name}    <span class="card__status">{product.price} DT</span></h3>
+                
               </div>
             </div>
             <p class="card__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores, blanditiis?
+              {product.description}
             </p>
           </div>
         </Link>

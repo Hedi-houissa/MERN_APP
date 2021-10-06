@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png"
 
-import './Footer.css'
+import "./Footer.css";
 
 function Footer() {
-
   // The back-to-top button is hidden at the beginning
   const [showButton, setShowButton] = useState(false);
 
@@ -19,11 +20,10 @@ function Footer() {
     });
   }, []);
 
-  // This function will scroll the window to the top 
+  // This function will scroll the window to the top
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
-
 
   return (
     <footer id="dk-footer" className="dk-footer">
@@ -33,12 +33,14 @@ function Footer() {
             <div className="dk-footer-box-info">
               <a href="index.html" className="footer-logo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784_960_720.png"
+                  // src="https://cdn.pixabay.com/photo/2016/11/07/13/04/yoga-1805784_960_720.png"
+                  src={logo}
                   alt="footer_logo"
                   className="img-fluid"
+                  width="80%"
                 />
               </a>
-              <p className="footer-info-text">
+              <p className="footer-info-text" style={{color : "white"}}>
                 Reference site about Lorem Ipsum, giving information on its
                 origins, as well as a random Lipsum generator.
               </p>
@@ -46,7 +48,7 @@ function Footer() {
                 <h3>Follow us</h3>
                 <ul>
                   <li>
-                    <a href="/">
+                    <a href="https://www.facebook.com/profile.php?id=100071537437781">
                       <i className="fa fa-facebook" />
                     </a>
                   </li>
@@ -75,10 +77,7 @@ function Footer() {
               {/* End Social link */}
             </div>
             {/* End Footer info */}
-            <div className="footer-awarad">
-              <img src="images/icon/best.png" alt="" />
-              <p>Best Design Company 2019</p>
-            </div>
+           
           </div>
           {/* End Col */}
           <div className="col-md-12 col-lg-8">
@@ -90,8 +89,8 @@ function Footer() {
                   </div>
                   {/* End contact Icon */}
                   <div className="contact-info">
-                    <h3>Jaipur India</h3>
-                    <p>5353 Road Avenue</p>
+                    <h3>Sabrine Fennia</h3>
+                    <p style={{ color: "white" }}>Gérante</p>
                   </div>
                   {/* End Contact Info */}
                 </div>
@@ -108,8 +107,7 @@ function Footer() {
                   </div>
                   {/* End contact Icon */}
                   <div className="contact-info">
-                    <h3>95 711 9 5353</h3>
-                    <p>Give us a call</p>
+                    <h3>50 447 085</h3>
                   </div>
                   {/* End Contact Info */}
                 </div>
@@ -122,7 +120,7 @@ function Footer() {
               <div className="col-md-12 col-lg-6">
                 <div className="footer-widget footer-left-widget">
                   <div className="section-heading">
-                    <h3>Useful Links</h3>
+                    <h3>Lien utils</h3>
                     <span className="animate-border border-black" />
                   </div>
                   <ul>
@@ -160,14 +158,12 @@ function Footer() {
               <div className="col-md-12 col-lg-6">
                 <div className="footer-widget">
                   <div className="section-heading">
-                    <h3>Subscribe</h3>
+                    <Link to="/login">
+                      <h3>S'inscrire</h3>
+                    </Link>
                     <span className="animate-border border-black" />
                   </div>
-                  <p>
-                    {/* Don’t miss to subscribe to our new feeds, kindly fill the form below. */}
-                    Reference site about Lorem Ipsum, giving information on its
-                    origins, as well.
-                  </p>
+                  
                   <form action="#">
                     <div className="form-row">
                       <div className="col dk-footer-form">
@@ -199,7 +195,7 @@ function Footer() {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <span>Copyright © 2019, All Right Reserved Seobin</span>
+              <span>Copyright © 2021, All Right Reserved Hedi</span>
             </div>
             {/* End Col */}
             <div className="col-md-6">
@@ -229,17 +225,16 @@ function Footer() {
       {/* End Copyright */}
       {/* Back to top */}
       <div id="back-to-top" className="back-to-top">
-        {showButton && 
-        <button
-        className="btn btn-dark"
-        title="Back to Top"
-        style={{ display: "block" }}
-        onClick={scrollToTop}
-      >
-        <i className="fa fa-angle-up" />
-      </button>
-        }
-        
+        {showButton && (
+          <button
+            className="btn btn-dark"
+            title="Back to Top"
+            style={{ display: "block" }}
+            onClick={scrollToTop}
+          >
+            <i className="fa fa-angle-up" />
+          </button>
+        )}
       </div>
       {/* End Back to top */}
     </footer>

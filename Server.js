@@ -17,6 +17,10 @@ connectDb()
 // body parser middelware
 app.use(express.json())
 
+//file
+const fileUpload = require('express-fileupload');
+app.use(fileUpload())
+
 //require routes 
 const userRouter = require('./routes/userRouter')
 const productRouter = require('./routes/productRouter')
@@ -28,6 +32,26 @@ app.use('/user',userRouter)
 app.use('/product',productRouter)
 app.use('/order',orderRouter)
 app.use('/category',categoryRouter)
+
+
+
+app.post('/upload', (req, res) => {
+  if (req.files === null) {
+    return res.status(400).json({ msg: 'No file uploaded' });
+  }
+
+  const file = req.files.file;
+
+  file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send(err);
+    }
+
+    // res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+  });
+});
+
 
 
 //create server

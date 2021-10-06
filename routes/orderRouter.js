@@ -7,6 +7,9 @@ const router = express.Router();
 //require model
 const Order = require("../model/Order");
 
+
+
+
 //test
 router.get("/test", (req, res) => {
   res.send("hello commande ");
@@ -73,15 +76,16 @@ router.get("/user/:userId", async (req, res) => {
  */
 router.post("/", async (req, res) => {
   try {
+    console.log('in order')
     const newOrder = req.body;
 
-    if (!userId || !listeProduct || !total) {
+    if (!newOrder.userId || !newOrder.listeProduct || !newOrder.total) {
       return res.status(400).send({ msg: "all fields are required" });
     }
 
-    newOrder.date = new Date();
-    newOrder.avance = 0;
-    newOrder.situation = "treatment";
+    // newOrder.date = new Date();
+    // newOrder.avance = 0;
+    // newOrder.situation = "treatment";
 
     const orderToAdd = Order(newOrder);
 
@@ -138,5 +142,8 @@ router.put("/:_id", async (req, res) => {
     return res.status(400).send({ msg: "order can note updated" });
   }
 });
+
+
+
 
 module.exports = router;

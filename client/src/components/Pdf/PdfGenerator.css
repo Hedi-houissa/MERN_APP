@@ -1,0 +1,35 @@
+.pdf{
+    background-color: white;
+    margin: 4% 20%;
+    
+
+}
+.Content{
+    margin-left: 5%;
+    width: 90%;
+    padding : 5%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+.title_pdf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 4%;
+}
+.societe{
+    width: 30%;
+}
+.client{
+    width: 30%;
+}
+.table{
+    margin-top: 2%;
+}
+.price {
+    width: 30% !important;
+    margin-left: 60%;
+    text-align: center;
+}

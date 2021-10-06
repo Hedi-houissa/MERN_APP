@@ -3,22 +3,34 @@
     margin: 0% 15%;
     width: 70%;
 }
+
+
+  .box_button{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0% 30%;
+  }
+  .cat_button{
+      width: 40%;
+  }
+
+  .img_button{
+      width: 70px;
+      margin: 0% 2%;
+  }
+
+.title_cat{
+
+    font-size: 40px;
+  font-weight: bold;
+  color: brown;
+}
 .cards {
-    display: flex;
-    flex-direction: row;
-    margin: 15%;
-    width: 70%;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 4rem 5vw;
     padding: 0;
     list-style-type: none;
-    
-  }
-
-  
-
-  .img_button{
-      width: 70px;
-      margin: 0% 2%;
   }

@@ -18,11 +18,23 @@ const productSchema = new Schema({
         type : String,
         required : true
     },
-    color:{
-        type : [],
+    grammage:{
+        type : String,
+        required : true
+    },
+    type:{
+        type : String,
+        required : true
+    },
+    description:{
+        type : String,
         required : true
     },
     dispo:{
+        type : Boolean,
+        required : true
+    },
+    price:{
         type : Number,
         required : true
     }

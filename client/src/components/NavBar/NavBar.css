@@ -224,6 +224,31 @@ code {
   color: red;
   size: 20px;
 }
+
 .login{
- margin: 0px 40px ;
+  margin: 0% 7%;
+}
+.nav_button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.button_img{
+  width: 70px;
+  margin: 0% 5%;
+}
+
+.taill_search{
+  width: 50px;
+}
+
+.space{
+  margin-left: 10%;
+}
+.text_none{
+  text-decoration: none;
 }
